@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { pingService } from "../services/ping-service.js";
-
-export function Stats(ping) {
+import { useSelector } from "react-redux";
+export function Stats() {
 	const [stats, setStats] = useState([]);
+	const result = useSelector((state) => state.statsModule.result);
 
 	useEffect(() => {
 		(async () => {
@@ -10,7 +11,7 @@ export function Stats(ping) {
 			const StatsMap = getObjMap(newStats);
 			setStats(StatsMap);
 		})();
-	}, []);
+	}, [result]);
 
 	const getObjMap = (obj) => {
 		return obj.reduce((acc, ping) => {
@@ -34,7 +35,7 @@ export function Stats(ping) {
 				return (
 					<li key={stat.site}>
 						<span>Site: "{stat.site}" </span>
-						<span className='time-pinged'> Times Pinged:{stat.count}</span>
+						<span className='time-pinged'> Times Pinged: {stat.count}</span>
 					</li>
 				);
 			});

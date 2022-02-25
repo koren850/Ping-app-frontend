@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from "react";
 import { pingService } from "../services/ping-service.js";
+import { useForm } from "../hooks/useForm";
+import { setResult } from "../store/stats.action";
+import { useDispatch, useSelector } from "react-redux";
 
 export function Form() {
-	const [res, setRes] = useState("");
-	const [input, setInput] = useState({ site: "", count: 4 });
-	useEffect(() => {}, []);
+	const pingResult = useSelector((state) => state.statsModule.result);
+	const [handleChange, input] = useForm();
+	const dispatch = useDispatch();
 
 	const ping = async () => {
 		let currPing = await pingService.ping(input.site, input.count);
-		setRes(currPing);
+		dispatch(setResult(currPing));
 	};
 
-	const handleChange = (event) => {
-		let key = event.target.name;
-		let val = event.target.value;
-		setInput({ ...input, [key]: val });
-	};
 	return (
 		<section className='form'>
 			<div className='user-input flex'>
@@ -35,7 +32,7 @@ export function Form() {
 				<button onClick={ping}> Run</button>
 			</div>
 			<div>
-				<textarea placeholder='Output' readOnly value={res}></textarea>
+				<textarea placeholder='Output' readOnly value={pingResult}></textarea>
 			</div>
 		</section>
 	);

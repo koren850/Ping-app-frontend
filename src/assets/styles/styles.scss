@@ -1,0 +1,13 @@
+// Basic
+@import "basics/colors.scss";
+@import "./basic/helpers.scss";
+@import "basics/base.scss";
+
+// Pages
+@import "pages/homepage.scss";
+@import "pages/secondPage.scss";
+
+// Components
+@import "components/header.scss";
+@import "components/form.scss";
+@import "components/stats.scss";

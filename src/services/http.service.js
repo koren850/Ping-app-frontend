@@ -1,11 +1,6 @@
 import axios from 'axios';
-// import Axios from 'axios';
 
 const BASE_URL = process.env.NODE_ENV === 'production' ? '/api/' : '//localhost:3030/api/';
-
-// var axios = Axios.create({
-//   withCredentials: true,
-// });
 
 export const httpService = {
 	get(endpoint, data) {

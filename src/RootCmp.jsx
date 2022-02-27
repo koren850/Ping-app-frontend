@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { AppHeader } from "./cmps/AppHeader.jsx";
 import { HomePage } from "./pages/HomePage.jsx";
-import { SecondPage } from "./pages/SecondPage.jsx";
+import { StatsPage } from "./pages/StatsPage.jsx";
 
 export function RootCmp() {
+	const [isDark, setIsDark] = useState(true);
 	return (
-		<section>
-			<AppHeader />
+		<section className={isDark ? "dark-mode" : "light-mode"}>
+			<AppHeader isDark={isDark} setIsDark={setIsDark} />
 			<Routes>
-				<Route path='/secondpage' element={<SecondPage />} />
+				<Route path='/stats' element={<StatsPage />} />
 				<Route path='/' element={<HomePage />} />
 			</Routes>
 		</section>

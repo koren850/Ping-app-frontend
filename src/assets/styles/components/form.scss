@@ -43,6 +43,13 @@
 			border: 4px solid $c4;
 		}
 	}
+	.pinging {
+		cursor: not-allowed;
+		background-color: $c3;
+		&:hover {
+			border: unset;
+		}
+	}
 	textarea {
 		border-radius: 7px;
 		height: 40vh;

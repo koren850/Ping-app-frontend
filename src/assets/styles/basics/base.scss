@@ -7,6 +7,18 @@ body {
 	margin: 0 auto;
 	background-color: $c5;
 	color: white;
+	letter-spacing: 0.1rem;
+	line-height: 1.5rem;
+}
+
+.dark-mode {
+	background-color: $c5;
+	color: white;
+}
+.light-mode {
+	min-height: 100vh;
+	background-color: rgb(245, 245, 245);
+	color: $c5;
 }
 
 h1 {

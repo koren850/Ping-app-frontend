@@ -1,0 +1,46 @@
+@keyframes pulse {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.output-container {
+	position: relative;
+}
+.holder {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.circle {
+	display: inline-block;
+	margin-inline-start: 5px;
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	animation-name: pulse;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in;
+	background-color: $c5;
+}
+.one {
+	animation-delay: 0.1s;
+}
+.two {
+	animation-delay: 0.2s;
+}
+.three {
+	animation-delay: 0.3s;
+}
+.four {
+	animation-delay: 0.4s;
+}

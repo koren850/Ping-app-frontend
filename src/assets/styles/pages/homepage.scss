@@ -1,1 +1,17 @@
+.stats-home-page {
+	text-align: center;
+	width: fit-content;
+	margin: auto;
+	border: 1px solid;
+	border-radius: 8px;
+	padding: 10px 20px;
+	margin-top: 20px;
 
+	b {
+		text-decoration: underline;
+		font-size: 1.3rem;
+	}
+	.guide {
+		margin-top: 5px;
+	}
+}

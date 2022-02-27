@@ -2,11 +2,17 @@ import { httpService } from './http.service'
 
 export const pingService = {
     ping,
-    getStats
+    getStats,
+    getObjMap,
+    getSpecificStat
 };
 
 async function getStats() {
     return await httpService.get('statistics')
+}
+
+async function getSpecificStat(site) {
+    return await httpService.post('statistics/getStat', { site })
 }
 
 async function ping(site = 'www.google.co.il', count = 4) {
@@ -16,13 +22,20 @@ async function ping(site = 'www.google.co.il', count = 4) {
         return res.ping
     }
     catch (err) {
-        return `Couldnt reach ${site} this site try again try "www.example.com" or ip adress`
+        return `Couldnt reach ${site} try "www.example.com" or ip address like "8.8.8.8"`
     }
 
 }
 
+function getObjMap(obj) {
+    return obj.reduce((acc, ping) => {
+        acc[ping.site] ? acc[ping.site]++ : (acc[ping.site] = 1);
+        return acc;
+    }, {});
+}
+
 function _tarnsferPingToObj(res, site) {
-    const keys = [{ key: 'Maximum', ammount: 4 }, { key: 'Minimum', ammount: 4 }, { key: 'Average', ammount: 4 }, { key: 'Sent', ammount: 1 }, { key: 'Lost', ammount: 1 }, { key: 'Received', ammount: 1 }]
+    const keys = [{ key: 'Maximum', ammount: 4 }, { key: 'Minimum', ammount: 4 }, { key: 'Average', ammount: 4 }, { key: 'Sent', ammount: 2 }, { key: 'Lost', ammount: 2 }, { key: 'Received', ammount: 2 }]
     const pings = { site, date: convertTime(), stats: { pings: getPingsStats(res) } };
     keys.forEach(item => {
         pings.stats[item.key.toLowerCase()] = getStatsFromStr(res.ping, `${item.key} = `, item.ammount);

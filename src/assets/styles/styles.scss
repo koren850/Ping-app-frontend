@@ -5,9 +5,11 @@
 
 // Pages
 @import "pages/homepage.scss";
-@import "pages/secondPage.scss";
+@import "pages/statsPage.scss";
 
 // Components
 @import "components/header.scss";
 @import "components/form.scss";
 @import "components/stats.scss";
+@import "components/loader.scss";
+@import "components/table.scss";

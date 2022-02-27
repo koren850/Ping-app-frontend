@@ -1,6 +1,5 @@
 .form {
-	margin-top: 20px;
-
+	padding-top: 20px;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
@@ -52,7 +51,7 @@
 	}
 	textarea {
 		border-radius: 7px;
-		height: 40vh;
-		width: 50vw;
+		height: 30vh;
+		width: 40vw;
 	}
 }

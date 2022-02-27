@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { AppHeader } from "./cmps/AppHeader.jsx";
+import { AppFooter } from "./cmps/AppFooter.jsx";
 import { HomePage } from "./pages/HomePage.jsx";
 import { StatsPage } from "./pages/StatsPage.jsx";
 
@@ -13,6 +14,7 @@ export function RootCmp() {
 				<Route path='/stats' element={<StatsPage />} />
 				<Route path='/' element={<HomePage />} />
 			</Routes>
+			<AppFooter isDark={isDark} setIsDark={setIsDark} />
 		</section>
 	);
 }

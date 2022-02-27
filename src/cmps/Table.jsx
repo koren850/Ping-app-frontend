@@ -21,8 +21,8 @@ export function CollapsibleTable({ data }) {
 				<Table aria-label='collapsible table'>
 					<TableHead>
 						<TableRow>
-							<TableCell align='center' className='table-header'>
-								{data[0].site}
+							<TableCell align='left' className='table-header'>
+								Site: {data[0].site}
 							</TableCell>
 							<TableCell align='center'>Date</TableCell>
 							<TableCell align='center'>Maximum</TableCell>
@@ -52,7 +52,7 @@ function Row(props) {
 					<IconButton aria-label='expand row' size='small' onClick={() => setOpen(!open)}>
 						{open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
 					</IconButton>
-					{row.idx + 1}
+					Ping {row.idx + 1}
 				</TableCell>
 				<TableCell align='center' component='th' scope='row'>
 					{row.date}

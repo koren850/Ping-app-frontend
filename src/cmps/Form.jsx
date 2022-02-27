@@ -22,7 +22,7 @@ export function Form() {
 	return (
 		<section className='form'>
 			<div className='user-input flex'>
-				<div>
+				<div className='inputs'>
 					<label>
 						Enter a site to ping(www.example.com):
 						<input className='innrt-input' autoFocus name='site' type='text' value={input.site} onChange={handleChange}></input>

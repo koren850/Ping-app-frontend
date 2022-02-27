@@ -123,6 +123,7 @@ input:checked + .slider:before {
 }
 
 .logo {
+	margin-inline-end: 10px;
 	cursor: pointer;
 	height: 6vh;
 	transition: transform 0.5s;

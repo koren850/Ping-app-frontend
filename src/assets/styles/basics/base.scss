@@ -12,13 +12,27 @@ body {
 }
 
 .dark-mode {
+	transition: all 0.7s;
 	background-color: $c5;
 	color: white;
+
+	.user-input,
+	.stats-home-page,
+	.stats li {
+		background-color: $c5;
+	}
 }
 .light-mode {
+	transition: all 0.5s;
 	min-height: 100vh;
 	background-color: rgb(245, 245, 245);
 	color: $c5;
+
+	.user-input,
+	.stats-home-page,
+	.stats li {
+		background-color: rgb(245, 245, 245);
+	}
 }
 
 h1 {

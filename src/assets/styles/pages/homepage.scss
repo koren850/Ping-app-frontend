@@ -1,20 +1,77 @@
 .home-page {
 	min-height: 84vh;
+	background-image: url("../../imgs/background.png");
+	background-repeat: repeat;
+	background-size: 30%;
+	padding-bottom: 20px;
 }
 .stats-home-page {
 	text-align: center;
 	width: fit-content;
 	margin: auto;
+	margin-top: 20px;
 	border: 1px solid;
 	border-radius: 8px;
 	padding: 10px 20px;
-	margin-top: 20px;
-
 	b {
 		text-decoration: underline;
 		font-size: 1.3rem;
 	}
 	.guide {
 		margin-top: 5px;
+	}
+}
+
+@media screen and (max-width: 780px) {
+	.home-page {
+		background-size: 80%;
+	}
+	.logo-text,
+	.header-link,
+	.mode-text {
+		font-size: 1.1rem !important;
+	}
+	textarea {
+		width: 80vw !important;
+	}
+	.user-input .inputs {
+		label {
+			flex-direction: column !important;
+			input {
+				margin: 8px 0;
+			}
+		}
+	}
+}
+@media screen and (max-width: 620px) {
+	.logo-text {
+		display: none !important;
+	}
+	.logo {
+		margin: 0 !important;
+	}
+}
+@media screen and (max-width: 520px) {
+	.stats-home-page {
+		text-align: left !important;
+
+		li {
+			flex-direction: column !important;
+			span {
+				padding: 0 !important;
+			}
+		}
+	}
+	.inputs label {
+		font-size: 1rem !important;
+	}
+	footer div {
+		font-size: 1rem;
+	}
+	.switch {
+		display: none !important;
+	}
+	.mode-text {
+		text-align: center !important;
 	}
 }

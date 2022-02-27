@@ -6,9 +6,8 @@ export function AppFooter({ isDark, setIsDark }) {
 			<footer>
 				<div>
 					<img src={logo} />
-					<span>Ping-U</span> Ⓒ 2022
+					<span>Ping-U</span> Ⓒ 2022 Made By Koren Aharon
 				</div>
-				<div>Made By Koren Aharon</div>
 			</footer>
 		</section>
 	);

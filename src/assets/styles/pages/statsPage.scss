@@ -1,4 +1,8 @@
 .stats-page {
+	background-image: url("../../imgs/background.png");
+	background-repeat: repeat;
+	background-size: 30%;
+	padding-top: 20px;
 	min-height: 84vh;
 	width: 100%;
 }
@@ -28,5 +32,10 @@
 		border-radius: 8px;
 		padding: 5px;
 		transition: all 0.7s;
+	}
+}
+@media screen and (max-width: 520px) {
+	.stats li {
+		font-size: 0.8rem !important;
 	}
 }

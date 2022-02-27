@@ -5,12 +5,30 @@
 }
 footer {
 	align-items: center;
-	font-size: 1.5rem;
+	font-size: 1.1rem;
+	& div {
+		display: flex;
+	}
 	img {
 		height: 20px;
 	}
 	span {
 		margin-inline-start: 10px;
 		font-family: cursive;
+	}
+	a {
+		margin-inline-start: 10px;
+		img {
+			background-color: rgb(255, 255, 255);
+
+			padding: 1px;
+			border-radius: 20%;
+		}
+	}
+}
+
+@media screen and (max-width: 520px) {
+	footer div {
+		font-size: 0.8rem;
 	}
 }

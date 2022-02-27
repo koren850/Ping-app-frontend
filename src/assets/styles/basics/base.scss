@@ -16,7 +16,7 @@ body {
 	background-color: $c5;
 	color: white;
 
-	.user-input,
+	.inputs,
 	.stats-home-page,
 	.stats li {
 		background-color: $c5;
@@ -28,10 +28,12 @@ body {
 	background-color: rgb(245, 245, 245);
 	color: $c5;
 
-	.user-input,
 	.stats-home-page,
 	.stats li {
 		background-color: rgb(245, 245, 245);
+	}
+	.inputs {
+		background-color: rgba(230, 230, 230, 0.465);
 	}
 }
 

@@ -8,6 +8,7 @@
 		flex-direction: column;
 		align-items: center;
 		border-radius: 8px;
+		padding: 0 15px;
 		& div {
 			label {
 				display: flex;
@@ -32,7 +33,7 @@
 		}
 	}
 	button {
-		margin-bottom: 10px;
+		margin: 10px 0;
 		width: 100px;
 		height: 30px;
 		border-radius: 12px;

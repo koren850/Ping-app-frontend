@@ -4,10 +4,12 @@ import { useForm } from "../hooks/useForm";
 import { setResult } from "../store/stats.action";
 import { useDispatch, useSelector } from "react-redux";
 import { Loader } from "./Loader";
+import { AutoComplete } from "./AutoComplete";
 
 export function Form() {
 	const [isPinging, setAction] = useState(false);
 	const pingResult = useSelector((state) => state.statsModule.result);
+	const pingData = useSelector((state) => state.statsModule.data);
 	const [handleChange, input] = useForm();
 	const dispatch = useDispatch();
 
@@ -26,6 +28,7 @@ export function Form() {
 					<label>
 						Enter a site to ping(www.example.com):
 						<input className='innrt-input' autoFocus name='site' type='text' value={input.site} onChange={handleChange}></input>
+						{input.site && <AutoComplete data={pingData} site={input.site} handleChange={handleChange} />}
 					</label>
 					<label>
 						Enter number of requests(1-10) :

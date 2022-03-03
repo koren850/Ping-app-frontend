@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { pingService } from "../services/ping-service.js";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setData } from "../store/stats.action";
+
 export function Stats({ click = () => {} }) {
 	const [stats, setStats] = useState([]);
 	const result = useSelector((state) => state.statsModule.result);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		(async () => {
 			const newStats = await query();
 			const StatsMap = pingService.getObjMap(newStats);
 			setStats(StatsMap);
+			dispatch(setData(StatsMap));
 		})();
 	}, [result]);
 

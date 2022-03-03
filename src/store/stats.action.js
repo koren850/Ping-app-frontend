@@ -17,4 +17,14 @@ export function setResult(result) {
         }
     };
 }
+export function setData(data) {
+    return async (dispatch) => {
+        try {
+            dispatch({ type: 'SET_DATA', data });
+        } catch {
+            console.log('could not get stays ');
+        }
+    };
+}
+
 
